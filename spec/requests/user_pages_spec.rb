@@ -56,6 +56,7 @@ describe "UserPages" do
 				let(:user) { User.find_by(email: 'user@example.com') }
 
 				it { should_not eq nil }
+				it { should have_link('Sign out') }
 #				it { should have_title(user.name) }
 				it { should have_title('Example User') }
 				it { should have_selector('div.alert.alert-success', text: 'Welcome') }
