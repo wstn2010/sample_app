@@ -90,6 +90,8 @@ describe "UserPages" do
 			before do
 				fill_in "Name", 	with: "Example User"
 				fill_in "Email",	with: "user@exmaple.com"
+				fill_in "Rep ID",	with: "R12345"
+				fill_in "Introduction",	with: "I am sales rep."
 				fill_in "Password",	with: "foobar"
 				fill_in "Confirmation", with: "foobar"
 			end
@@ -137,6 +139,7 @@ describe "UserPages" do
 			before do
 				fill_in "Name", with: new_name
 				fill_in "Email", with: new_email
+				fill_in "Rep ID", with: user.rep_id
 				fill_in "Password", with: user.password
 				fill_in "Confirmation", with: user.password
 				click_button "Save changes"
@@ -175,8 +178,8 @@ describe "UserPages" do
 		it { should have_title(user.name) }
 
 		describe "microposts" do
-			it { should have_content(m1.content) }
-			it { should have_content(m2.content) }
+			it { should have_content(m1.title) }
+			it { should have_content(m2.title) }
 			it { should have_content(user.microposts.count) }
 		end
 	end

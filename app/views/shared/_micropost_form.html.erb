@@ -1,7 +1,32 @@
 <%= form_for(@micropost) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="field">
-		<%= f.text_area :content, placeholder: "Compose new micropost..." %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+		<%= f.label :key %>
+		<%= f.text_field :key %>
+
+		<%= f.label :category %>
+		<%= f.text_field :category %>
+
+		<%= f.label :whole_price %>
+		<%= f.text_field :whole_price %>
+
+		<%= f.label :shipping_cost %>
+		<%= f.text_field :shipping_cost %>
+
+		<%= f.label :short_desc %>
+		<%= f.text_field :short_desc %>
+
+		<%= f.label :desc %>
+		<%= f.text_field :desc %>
+
+		<%= f.label :rep_short_desc %>
+		<%= f.text_field :rep_short_desc %>
+
+		<%= f.label :rep_desc %>
+		<%= f.text_field :rep_desc %>
 	</div>
 	<%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -17,8 +17,19 @@ namespace :db do
 
 		users = User.all(limit:6)
 		50.times do
-			content = Faker::Lorem.sentence(5)
-			users.each { |user| user.microposts.create!(content: content) }
+			c = ["food", "health", "education"]
+			i = rand(3)
+			users.each { |user| user.microposts.create!(
+				title: Faker::Commerce.product_name,
+				key: Faker::Code.isbn,
+				category: c[i],
+				whole_price: Faker::Commerce.price,
+				shipping_cost: Faker::Commerce.price,
+				short_desc: Faker::Lorem.sentence(1),
+				desc: Faker::Lorem.paragraph,
+				rep_short_desc: Faker::Lorem.sentence(1),
+				rep_desc: Faker::Lorem.paragraph
+				) }
 		end
 	end
 end 

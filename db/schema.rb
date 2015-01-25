@@ -11,15 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215061339) do
+ActiveRecord::Schema.define(version: 20150124111353) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.string   "key"
+    t.string   "category"
+    t.integer  "whole_price"
+    t.integer  "shipping_cost"
+    t.string   "short_desc"
+    t.string   "desc"
+    t.string   "rep_short_desc"
+    t.string   "rep_desc"
   end
 
+  add_index "microposts", ["category"], name: "index_microposts_on_category"
+  add_index "microposts", ["key"], name: "index_microposts_on_key", unique: true
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
@@ -30,9 +41,12 @@ ActiveRecord::Schema.define(version: 20141215061339) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.string   "rep_id"
+    t.string   "introduction"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["rep_id"], name: "index_users_on_rep_id", unique: true
 
 end
