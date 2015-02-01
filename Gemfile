@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.5'
+gem 'rails', '4.1'
 
-gem 'bootstrap-sass', '2.3.2.0'
+# gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker'
@@ -54,6 +55,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', '0.3.20', require: false
 end
+
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', '3.2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
