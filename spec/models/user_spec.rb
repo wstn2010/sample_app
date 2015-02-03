@@ -6,7 +6,8 @@ describe User do
 		name: "Example User", 
 		email:"user@example.com",
 		password: "foobar",
-		password_confirmation: "foobar"
+		password_confirmation: "foobar",
+		rep_id: "R0123"
 	)}
 
 	subject { @user }
@@ -27,6 +28,8 @@ describe User do
 	it { should respond_to(:followers) }
 	it { should respond_to(:following?) }
 	it { should respond_to(:follow!) }
+	it { should respond_to(:rep_id) }
+	it { should respond_to(:introduction) }
 
 
 	it { should be_valid }
@@ -53,6 +56,11 @@ describe User do
 
 	describe "when name is too long" do
 		before { @user.name = "a" * 51}
+		it { should_not be_valid }
+	end
+
+	describe "when rep_id is not present" do
+		before { @user.rep_id = " " }
 		it { should_not be_valid }
 	end
 
