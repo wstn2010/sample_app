@@ -4,6 +4,10 @@ $lightGray: #999;
 
 $grayMediumLight: #eaeaea;
 
+$grayLighter: #eaeaea;
+
+$blue: #0000ff;
+
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -189,7 +193,7 @@ input {
 }
 
 .timestamp {
-	color: $grayLight;
+	color: $lightGray;
 }
 
 .gravatar {
