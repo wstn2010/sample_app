@@ -4,9 +4,6 @@ $lightGray: #999;
 
 $grayMediumLight: #eaeaea;
 
-$grayLighter: #eaeaea;
-
-$blue: #0000ff;
 
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
@@ -19,7 +16,7 @@ html {
 }
 
 body {
-	padding-top: 60px;
+	padding-top: 92px;
 }
 
 section {
@@ -115,7 +112,7 @@ footer {
 aside {
 	section {
 		padding: 10px 0;
-		border-top: 1px solid $grayLighter;
+		border-top: 1px solid $gray-lighter;
 		&:first-child {
 			border: 0;
 			padding-top: 0;
@@ -171,9 +168,9 @@ input {
 	li {
 		overflow: auto;
 		padding: 10px 0;
-		border-top: 1px solid $grayLighter;
+		border-top: 1px solid $gray-lighter;
 		&:last-child {
-			border-bottom: 1px solid $grayLighter;
+			border-bottom: 1px solid $gray-lighter;
 		}
 	}
 }
@@ -213,7 +210,7 @@ aside {
 	a {
 		float: left;
 		padding: 0 10px;
-		border-left: 1px solid $grayLighter;
+		border-left: 1px solid $gray-lighter;
 		color: gray;
 		&:first-child {
 			padding-left: 0;
@@ -221,7 +218,7 @@ aside {
 		}
 		&:hover {
 			text-decoration: none;
-			color: $blue;
+			color: #ff;
 		}
 	}
 	strong {
@@ -246,3 +243,55 @@ aside {
 .right-menu {
 	border-left: 1px solid $grayMediumLight;
 }
+
+  /* Navbarのオリジナルスタイル */
+      .navbar-default {
+        border: none;
+      }
+      .navbar-origin {
+        background: #ffffff;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar-origin .navbar-brand {
+        padding: 0 15px;
+        line-height: 90px;
+        height: 90px;
+        font-size: 28px;
+        font-weight: 100;
+      }
+      .navbar-origin .navbar-nav>li>a {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 90px;
+        font-weight: 200;
+        color: #A5A5A5;
+      }
+      .navbar-origin .navbar-nav>li>a:hover{
+        color: #E42121;
+        border-bottom: 1px solid #E42121;
+        line-height: 89px;
+      }
+      .navbar-origin .navbar-nav>.open>a,
+      .navbar-origin .navbar-nav>.open>a:hover,
+      .navbar-origin .navbar-nav>.open>a:focus {
+        background: none;
+        color: #E42121;
+      }
+      .navbar-origin .navbar-nav>li>.dropdown-menu {
+        margin-top: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top: 1px solid #E42121;
+      }
+      .navbar-origin .dropdown-menu {
+        padding: 0;
+      }
+      .navbar-origin .dropdown-menu li a {
+        padding: 15px;
+        color: #777;
+      }
+      .navbar-origin .dropdown-menu li.divider {
+        padding: 0;
+        margin: 0;
+      }
