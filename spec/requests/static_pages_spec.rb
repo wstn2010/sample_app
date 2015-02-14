@@ -13,11 +13,12 @@ describe "Static Pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading) { 'Sample App' }
+    let(:heading) { 'Rep Portal' }
     let(:page_title) { ''}
 
     it_should_behave_like "all static pages"
     it { should_not have_title("| Home") }
+
 
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
@@ -36,16 +37,6 @@ describe "Static Pages" do
 
       it { expect(user.microposts.count).to eq 2 }
 
-      describe "follower/following counts" do
-        let(:other_user) { FactoryGirl.create(:user) }
-        before do
-          other_user.follow!(user)
-          visit root_path
-        end
-
-        it { should have_link("0 following", href: following_user_path(user)) }
-        it { should have_link("1 followers", href: followers_user_path(user)) }
-      end
     end
   end
 

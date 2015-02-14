@@ -18,6 +18,11 @@ class MicropostsController < ApplicationController
 		redirect_to root_url
 	end
 
+	def self.todays_goods(category)
+		@microposts = Micropost.where('category=?', category).shuffle
+		@microposts[0]
+	end
+
 	private
 
 		def micropost_params

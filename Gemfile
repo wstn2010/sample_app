@@ -15,7 +15,8 @@ gem 'bootstrap-will_paginate', '0.0.9'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3', '1.3.8'
-	gem 'rspec-rails', '2.13.1'
+# 	gem 'rspec-rails', '2.13.1'
+	gem "rspec-rails", '~> 2.14.0.rc1'
 #	gem 'guard-rspec'
 end
 
@@ -23,6 +24,7 @@ group :test do
 	gem 'selenium-webdriver', '2.35.1'
 	gem 'capybara', '2.1.0'
 	gem 'factory_girl_rails', '4.2.1'
+	gem "shoulda-matchers", "~> 2.6.0"
 end
 
 group :production do
