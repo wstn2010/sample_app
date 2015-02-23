@@ -12,6 +12,26 @@ describe "Static Pages" do
   end
 
   describe "Home page" do
+    describe "for annonymous users" do
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+        FactoryGirl.create(:micropost, user: user, title:"Goods1", category:"helth", short_desc:"It is helthy goods")
+        FactoryGirl.create(:micropost, user: user, title:"Goods2", category:"food", short_desc:"It is rare food")
+        visit root_path
+      end
+
+      it "should render the title of today's goods" do
+          expect(page).to have_content("Goods2")
+      end
+
+      it "should render the desc of today's goods" do
+          expect(page).to have_content("It is rare food")
+      end
+
+    end
+  end
+  
+  describe "Home page" do
     before { visit root_path }
     let(:heading) { 'Rep Portal' }
     let(:page_title) { ''}

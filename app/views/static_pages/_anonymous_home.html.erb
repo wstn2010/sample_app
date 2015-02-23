@@ -18,10 +18,9 @@
 				<div class="goods_pic">
 					<img src=<%= Faker::Avatar.image("goods1", "250x200") %>>
 				</div>
-				<h2>珍味</h2>
+				<h2><%= @todays_goods.title unless @todays_goods.nil? %></h2>
 				<p>
-					この商品は、とてもよいです。買った方がよかとです。そんなにお疑いになるなら、
-					実際に使ってみればいいんです。返品は一切受け付けません。
+					<%= @todays_goods.short_desc  unless @todays_goods.nil? %>
 				</p>
 			</div>
 		</div>
@@ -44,10 +43,9 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<img src=<%= Faker::Avatar.image("goods01", "250x200") %>>
-				<h2>素晴らしい洗剤</h2>
+				<h2><%= @todays_remaked1.title unless @todays_remaked1.nil? %></h2>
 				<p>
-					この商品は、とてもよいです。買った方がよかとです。そんなにお疑いになるなら、
-					実際に使ってみればいいんです。返品は一切受け付けません。
+					<%= @todays_remaked1.short_desc  unless @todays_remaked1.nil? %>
 				</p>
 			</div>
 		</div>
@@ -57,10 +55,9 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<img src=<%= Faker::Avatar.image("goods02", "250x200") %>>
-				<h2>素晴らしい道具</h2>
+				<h2><%= @todays_remaked2.title unless @todays_remaked2.nil? %></h2>
 				<p>
-					この商品は、とてもよいです。買った方がよかとです。そんなにお疑いになるなら、
-					実際に使ってみればいいんです。返品は一切受け付けません。
+					<%= @todays_remaked2.short_desc  unless @todays_remaked2.nil? %>
 				</p>
 			</div>
 		</div>
@@ -70,10 +67,9 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<img src=<%= Faker::Avatar.image("goods03", "250x200") %>>
-				<h2>素晴らしい商品</h2>
+				<h2><%= @todays_remaked3.title unless @todays_remaked3.nil? %></h2>
 				<p>
-					この商品は、とてもよいです。買った方がよかとです。そんなにお疑いになるなら、
-					実際に使ってみればいいんです。返品は一切受け付けません。
+					<%= @todays_remaked3.short_desc  unless @todays_remaked3.nil? %>
 				</p>
 			</div>
 		</div>

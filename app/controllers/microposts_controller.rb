@@ -19,8 +19,11 @@ class MicropostsController < ApplicationController
 	end
 
 	def self.todays_goods(category)
-		@microposts = Micropost.where('category=?', category).shuffle
-		@microposts[0]
+		Micropost.where('category=?', category).sample
+	end
+
+	def self.goods_remarkable_pickups
+		Micropost.offset(rand(Micropost.count)).first	
 	end
 
 	private
