@@ -1,4 +1,8 @@
-	<header class="navbar navbar-fixed-top navbar-origin">
+	<% if signed_in? %>
+		<header class="navbar navbar-fixed-top navbar-origin navbar-rep">
+	<% else %>
+		<header class="navbar navbar-fixed-top navbar-origin">
+	<% end %>
 		<div class="container-fluid">
 
 	     <div class="navbar-header">
