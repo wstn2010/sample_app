@@ -1,0 +1,12 @@
+
+<h2><%= object.title unless object.nil? %></h2>
+
+<p>
+<% if signed_in? %>
+	<!-- [rep]<%= object.rep_short_desc  unless object.nil? %> -->
+	rep
+<% else %>
+	<%= object.short_desc  unless object.nil? %>
+<% end %>
+</p>
+
