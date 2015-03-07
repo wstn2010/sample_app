@@ -1,0 +1,40 @@
+<div class="row">
+
+	<div class="col-xs-12"> 
+		<h1>Category: <%= params[:name] %></h1>
+		<div class="panel panel-default">
+			<div class="panel-body">
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<img src=<%= Faker::Avatar.image("goods01", "250x200") %>>
+				<%= render 'static_pages/todays_goods', object: @todays_remaked1 %>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<img src=<%= Faker::Avatar.image("goods02", "250x200") %>>
+				<%= render 'static_pages/todays_goods', object: @todays_remaked2 %>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<img src=<%= Faker::Avatar.image("goods03", "250x200") %>>
+				<%= render 'static_pages/todays_goods', object: @todays_remaked3 %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

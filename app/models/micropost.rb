@@ -4,12 +4,13 @@ class Micropost < ActiveRecord::Base
 	validates :user_id, presence: true
 
 	validates :title, presence: true
-	validates :key, presence: true
 	validates :category, presence: true
-	validates :whole_price, presence: true
-	validates :shipping_cost, presence: true
 	validates :short_desc, presence: true
 	validates :desc, presence: true
 	validates :rep_short_desc, presence: true
 	validates :rep_desc, presence: true
+	validates :goods_seq, presence: true
+	validates :maker, presence: true
+	validates :pic_url, presence: true
+	
 end

@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
     @todays_remaked3 = MicropostsController.goods_remarkable_pickups
   end
 
+
   def help
   	@word = "my help"
   end
