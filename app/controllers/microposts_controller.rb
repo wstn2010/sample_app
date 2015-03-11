@@ -18,14 +18,6 @@ class MicropostsController < ApplicationController
 		redirect_to root_url
 	end
 
-	def self.todays_goods(category)
-		Micropost.where('category=?', category).sample
-	end
-
-	def self.goods_remarkable_pickups
-		Micropost.offset(rand(Micropost.count)).first	
-	end
-
 	private
 
 		def micropost_params

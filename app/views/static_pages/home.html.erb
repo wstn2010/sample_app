@@ -1,69 +1,27 @@
-<div class="row">
-	<% if !signed_in? %>
-		<div class="col-xs-12">
-			<center>
-			<video width="940" autoplay loop="true" >  
-				<source src="https://dl.dropboxusercontent.com/u/3352587/sample.mp4"　type="video/mp4"/>
-				I'm sorry; your browser doesn't support HTML5 video.
-			</video>
-			<!--
-			<img src=<%= Faker::Avatar.image("shop", "940x320") %>>
-			-->
-			</center>
-		</div>
-	<% end %>
+<% if !signed_in? %>
+	<center>
+		<video width="940" autoplay loop="true" >  
+			<source src="https://dl.dropboxusercontent.com/u/3352587/sample.mp4"　type="video/mp4"/>
+			I'm sorry; your browser doesn't support HTML5 video.
+		</video>
+	</center>
+<% end %>
 
-	<div class="col-xs-12"> <h1>Staff Picks: Foods</h1></div>
-	<div class="col-xs-9">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div class="goods_pic">
-					<img src=<%= @todays_goods.pic_url %>>
-				</div>
-				<%= render 'static_pages/todays_goods', object: @todays_goods %>
-			</div>
-		</div>
-	</div>
-	<div class="col-xs-3">
-		<div class="right-menu">
-		<ul class="nav nav-pills nav-stacked">
-			<li role="presentation"><a href="/category?name=food">フード</a></li>
-			<li role="presentation"><a href="/category?name=health">健康</a></li>
-			<li role="presentation"><a href="/category?name=education">教育</a></li>
-			<li role="presentation"><a href="/category?name=relax">いやし</a></li>
-			<li role="presentation"><a href="/category?name=sanitary">衛生</a></li>
-		</ul>
-		</div>
-	</div>
+<div class="row">
 
 	<div class="col-xs-12"> <h1>What's Popular</h1></div>
 
-	<div class="col-xs-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<img src=<%= @todays_remaked1.pic_url %>>
-				<%= render 'static_pages/todays_goods', object: @todays_remaked1 %>
+	<% for goods in @primary_goods %>
+		<div class="col-xs-4">
+			<div class="panel panel-default panel_custom">
+				<div class="panel-body">
+					<img src=<%= goods.pic_url %>>
+					<%= render 'static_pages/todays_goods', object: goods %>
+				</div>
 			</div>
 		</div>
-	</div>
+	<% end %>
 
-	<div class="col-xs-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<img src=<%= @todays_remaked2.pic_url %>>
-				<%= render 'static_pages/todays_goods', object: @todays_remaked2 %>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-xs-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<img src=<%= @todays_remaked3.pic_url %>>
-				<%= render 'static_pages/todays_goods', object: @todays_remaked3 %>
-			</div>
-		</div>
-	</div>
 </div>
 
 

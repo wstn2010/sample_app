@@ -1,11 +1,14 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @todays_goods = MicropostsController.todays_goods 'food'
-    @todays_remaked1 = MicropostsController.goods_remarkable_pickups
-    @todays_remaked2 = MicropostsController.goods_remarkable_pickups
-    @todays_remaked3 = MicropostsController.goods_remarkable_pickups
+    @todays_remaked1 = goods_remarkable_pickups
+    @todays_remaked2 = goods_remarkable_pickups
+    @todays_remaked3 = goods_remarkable_pickups
+
+    @primary_goods = Micropost.where('goods_seq=?', 0)
+
   end
+
 
 
   def help
@@ -18,5 +21,10 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  private
+
+    def goods_remarkable_pickups
+      Micropost.offset(rand(Micropost.count)).first 
+    end
   
 end
