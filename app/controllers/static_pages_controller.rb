@@ -1,15 +1,14 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @todays_remaked1 = goods_remarkable_pickups
-    @todays_remaked2 = goods_remarkable_pickups
-    @todays_remaked3 = goods_remarkable_pickups
-
     @primary_goods = Micropost.where('goods_seq=?', 0)
 
   end
 
-
+  def primary
+    @foo = "foo"
+    @todays_remaked1 = goods_remarkable_pickups
+  end
 
   def help
   	@word = "my help"

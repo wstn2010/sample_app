@@ -1,6 +1,7 @@
 
+<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材'}), primary_path(:name => object.title) %>
 
-<h2><%= object.title unless object.nil? %></h2>
+<h2><%= link_to object.title, primary_path(:name => object.title) unless object.nil? %></h2>
 
 <p>
 <% if signed_in? %>
