@@ -1,0 +1,13 @@
+
+<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材'}), primary_path(:goods => object) %>
+
+<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %></h2>
+
+<p>
+<% if signed_in? %>
+	[rep]<%= object.rep_short_desc  unless object.nil? %>
+<% else %>
+	<%= object.short_desc  unless object.nil? %>
+<% end %>
+</p>
+

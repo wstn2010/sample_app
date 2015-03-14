@@ -1,0 +1,23 @@
+<% if !object.nil? %>
+	<div class="goods_pic">
+		<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材'}), primary_path(:name => object.title) %>
+	</div>
+
+	<h2><%= link_to object.title, primary_path(:name => object.title) %></h2>
+
+	<p>
+		<% if signed_in? %>
+			[rep]<%= object.rep_desc %>
+		<% else %>
+			<%= object.desc %>
+		<% end %>
+	</p>
+
+	連絡先: 
+	<span class="user">
+		<%= link_to object.user.name, object.user %>
+	</span>
+
+<% else %>
+	sorry, not prepared!
+<% end %>

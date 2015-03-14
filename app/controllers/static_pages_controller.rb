@@ -6,8 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def primary
-    @foo = "foo"
-    @todays_remaked1 = goods_remarkable_pickups
+    @goods = Micropost.find_by(id: params[:goods])
   end
 
   def help
