@@ -246,12 +246,17 @@ aside {
 	overflow:scroll;
 }
 
+.maker_title {
+	height: 120px;
+	background: #FEFB51;
+}
 
 .right-menu {
 	border-left: 1px solid $grayMediumLight;
 }
 
 /* Navbarのオリジナルスタイル */
+
   .navbar-default {
     border: none;
   }
