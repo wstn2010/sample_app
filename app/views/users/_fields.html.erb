@@ -9,11 +9,12 @@
 <%= f.label :rep_id, "Rep ID" %>
 <%= f.text_field :rep_id %>
 
-<%= f.label :introduction %>
-<%= f.text_field :introduction %>
-
 <%= f.label :password %>
 <%= f.password_field :password %>
 
 <%= f.label :password_confirmation, "Confirmation" %>
 <%= f.password_field :password_confirmation %>
+
+<%= f.label :introduction %>
+<%= f.text_area :introduction, :rows => "10" %>
+

@@ -6,7 +6,9 @@
 				<%= gravatar_for @user, size: 200 %>
 				<%= @user.name %>
 			</h1>
+			ID: <%= @user.rep_id %>
 		</section>
+		<%= @user.introduction.html_safe %>
 	</aside>
 
 	<div class="span8">
