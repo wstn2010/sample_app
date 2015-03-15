@@ -12,6 +12,17 @@
 		</div>
 	</div>
 
+	<% for goods in @sub_goods %>
+		<div class="col-xs-4">
+			<div class="panel panel-default panel_custom">
+				<div class="panel-body">
+					<%= render 'static_pages/goods_simple', object: goods %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+
+
 </div>
 
 
