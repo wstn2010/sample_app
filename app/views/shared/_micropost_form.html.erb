@@ -4,17 +4,8 @@
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 
-		<%= f.label :key %>
-		<%= f.text_field :key %>
-
 		<%= f.label :category %>
 		<%= f.text_field :category %>
-
-		<%= f.label :whole_price %>
-		<%= f.text_field :whole_price %>
-
-		<%= f.label :shipping_cost %>
-		<%= f.text_field :shipping_cost %>
 
 		<%= f.label :short_desc %>
 		<%= f.text_field :short_desc %>
@@ -27,6 +18,16 @@
 
 		<%= f.label :rep_desc %>
 		<%= f.text_field :rep_desc %>
+
+		<%= f.label :goods_seq %>
+		<%= f.text_field :goods_seq %>
+
+		<%= f.label :maker %>
+		<%= f.text_field :maker %>
+
+		<%= f.label :pic_url %>
+		<%= f.text_field :pic_url %>
+
 	</div>
-	<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+	<%= f.submit "Register", class: "btn btn-large btn-primary" %>
 <% end %>
