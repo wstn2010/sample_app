@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-	<aside class="span4">
+	<aside class="col-xs-3">
 		<section>
 			<h1>
 				<%= gravatar_for @user, size: 200 %>
@@ -8,11 +8,16 @@
 			</h1>
 			ID: <%= @user.rep_id %>
 		</section>
-		<%= @user.introduction.html_safe %>
 	</aside>
+	<div class="col-xs-9 introduction">
+		Introduction: <%= @user.introduction.html_safe %>
+	</div>
 
-	<div class="col-xs-12">
-		<h3>Goods (<%= @user.microposts.count %>)</h3>
+	<div class="col-xs-12 title-with-buttons">
+		<span>Managed Goods (<%= @user.microposts.count %>)</span>
+		<% if current_user?(@user) %>
+			<%= link_to "Add", new_micropost_path, class: "btn btn-large btn-primary" %>
+		<% end %>
 	</div>
 
 	<% for goods in @user.microposts %>
@@ -24,14 +29,4 @@
 			</div>
 		</div>
 	<% end %>
-
-<!-- 	<div class="span8">
-		<% if @user.microposts.any? %>
-			<h3>Microposts (<%= @user.microposts.count %>)</h3>
-			<ol class="microposts">
-				<%= render @microposts %>
-			</ol>
-			<%= will_paginate @microposts %>
-		<% end %>
-	</div>
- --></div>
+ </div>

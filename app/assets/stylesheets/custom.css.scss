@@ -21,6 +21,9 @@ body {
 
 section {
 	overflow: auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+
 }
 
 textarea {
@@ -249,6 +252,21 @@ aside {
 .maker_title {
 	height: 120px;
 	background: #FEFB51;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.introduction {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.title-with-buttons {
+	height: 48px;
+	span {
+		font-size: 24pt;
+		margin-left: 16px;
+	}
 	margin-top: 8px;
 	margin-bottom: 8px;
 }

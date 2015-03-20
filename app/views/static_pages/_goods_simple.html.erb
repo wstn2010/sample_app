@@ -6,6 +6,13 @@
 <p>
 <% if signed_in? %>
 	[rep]<%= object.rep_short_desc  unless object.nil? %>
+	<% if controllable?(object) %>
+		<div class="btn_box">
+			<%= link_to "Edit", micropost_path(object.id), :method => :put, class: "btn btn-large btn-primary" %>
+			<%= link_to "Delete", micropost_path(object.id), :method => :delete, class: "btn btn-large btn-primary" %>
+		</div>
+	<% end %>
+
 <% else %>
 	<%= object.short_desc  unless object.nil? %>
 <% end %>
