@@ -1,0 +1,9 @@
+<% provide(:title, '商材編集') %>
+<h1>商材編集</h1>
+
+<div class="row">
+	<%= form_for(@micropost) do |f| %>
+		<%= render 'fields', f:f %>
+		<%= f.submit "更新", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
