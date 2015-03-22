@@ -2,23 +2,6 @@ class MicropostsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user, only: :destroy
 
-	def create
-	    if !signed_in?
-	      redirect_to root_url
-	    else
-
-			@micropost = current_user.microposts.build(micropost_params)
-
-			if @micropost.save
-				flash[:success] = "商材を追加しました!"
-				redirect_to user_url(current_user)
-			else
-	    		render 'new'
-			end
-	    end
-	end
-
-
 	def destroy
 		@micropost.destroy
 		redirect_to user_url(current_user)
@@ -38,6 +21,36 @@ class MicropostsController < ApplicationController
 	    else
 	    	@micropost.goods_seq = 0
 	    end
+	end
+
+	def create
+	    if !signed_in?
+	      redirect_to root_url
+	    else
+
+			@micropost = current_user.microposts.build(micropost_params)
+
+			if @micropost.save
+				flash[:success] = "商材を追加しました!"
+				redirect_to user_url(current_user)
+			else
+	    		render 'new'
+			end
+	    end
+	end
+
+	def edit
+		@micropost = Micropost.find(params[:id])
+	end
+
+	def update
+		@micropost = Micropost.find(params[:id])
+		if @micropost.update_attributes(micropost_params)
+			flash[:success] = "商材が更新されました"
+			redirect_to user_url(current_user)
+		else
+			render 'edit'
+		end
 	end
 
 	private
