@@ -1,34 +1,34 @@
 <%= render 'shared/error_messages', object: f.object %>
 
 <div class="col-xs-6">
-<%= f.label :title %>
-<%= f.text_field :title %>
+	<%= f.label :goods_seq, "通し番号" %>
+	<%= f.text_field :goods_seq, :readonly => true %>
 
-<%= f.label :category %>
-<%= f.text_field :category %>
+	<%= f.label :title, "商品名" %>
+	<%= f.text_field :title %>
 
-<%= f.label :goods_seq %>
-<%= f.text_field :goods_seq, :readonly => true %>
+	<%= f.label :category, "カテゴリ" %>
+	<%= f.text_field :category %>
 
-<%= f.label :maker %>
-<%= f.text_field :maker %>
+	<%= f.label :maker, "メーカ" %>
+	<%= f.text_field :maker %>
 
-<%= f.label :pic_url %>
-<%= f.text_field :pic_url %>
+	<%= f.label :pic_url, "商材画像URL" %>
+	<%= f.text_field :pic_url %>
+
+	<%= f.label :short_desc, "簡易説明" %>
+	<%= f.text_area :short_desc, :rows => "3" %>
 </div>
 
 <div class="col-xs-6">
 
-<%= f.label :short_desc %>
-<%= f.text_area :short_desc, :rows => "3" %>
+	<%= f.label :desc, "説明" %>
+	<%= f.text_area :desc, :rows => "5" %>
 
-<%= f.label :desc %>
-<%= f.text_area :desc, :rows => "5" %>
+	<%= f.label :rep_short_desc, "レップ向け簡易説明" %>
+	<%= f.text_area :rep_short_desc, :rows => "3" %>
 
-<%= f.label :rep_short_desc %>
-<%= f.text_area :rep_short_desc, :rows => "3" %>
-
-<%= f.label :rep_desc %>
-<%= f.text_area :rep_desc, :rows => "5" %>
+	<%= f.label :rep_desc, "レップ向け説明" %>
+	<%= f.text_area :rep_desc, :rows => "5" %>
 
 </div>
