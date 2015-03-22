@@ -5,7 +5,7 @@ SampleApp::Application.routes.draw do
   resources :microposts
 
   root 'static_pages#home'
-  match '/signup', to: 'users#new', via: 'get'
+  #match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/help', to: 'static_pages#help', via: 'get'

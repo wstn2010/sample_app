@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    if signed_in?
+    if !current_user.admin?
       redirect_to root_url
     else
     	@user = User.new
@@ -28,14 +28,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    if signed_in?
+    if !current_user.admin?
       redirect_to root_url
     else
     	@user = User.new(user_params)
     	if @user.save
-        sign_in @user
-    		flash[:success] = "Welcome to the Sample App!"
-    		redirect_to @user
+      #   sign_in @user
+        flash[:success] = "ユーザを追加しました"
+    		redirect_to user_url(current_user)
     	else
     		render 'new'
     	end
