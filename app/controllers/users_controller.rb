@@ -47,14 +47,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
-    else
-      render 'edit'
+      @user = User.find(params[:id])
+
+      # 登録されない: strong-paramではじかれる
+      @user.password = "dummypass"
+      @user.password_confirmation = @user.password
+
+      if @user.update_attributes(user_params_ex_passwd)
+        flash[:success] = "プロファイルを更新しました"
+        redirect_to @user
+      else
+        render 'edit'
+      end
     end
-  end
 
 
   private
@@ -69,6 +74,15 @@ class UsersController < ApplicationController
         :introduction
         )
   	end
+
+    def user_params_ex_passwd
+      params.require(:user).permit(
+        :name, 
+        :email, 
+        :rep_id,
+        :introduction
+        )
+    end
 
     def correct_user
       @user = User.find(params[:id])
