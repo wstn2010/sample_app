@@ -10,14 +10,14 @@ end
 def make_users
 	categories = ["food", "health", "education"]
 
-	User.create!(name: "Example User", 
-		email: "example@railstutorial.jp",
-		password: "foobar",
-		password_confirmation: "foobar",
+	User.create!(name: "administrator", 
+		email: "wstn2010@gmail.com",
+		password: "zaq12345",
+		password_confirmation: "zaq12345",
 		rep_id: "R0000",
 		introduction: "I'm administrator.",
 		admin: true)
-	10.times do |n|
+	5.times do |n|
 		name = Faker::Name.name
 		email = "example-#{n+1}@railstutorial.jp"
 		password = "password"
