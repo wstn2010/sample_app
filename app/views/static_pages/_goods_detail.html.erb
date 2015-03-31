@@ -7,9 +7,9 @@
 
 	<p>
 		<% if signed_in? %>
-			[rep]<%= object.rep_desc %>
+			<%= object.rep_desc.html_safe %>
 		<% else %>
-			<%= object.desc %>
+			<%= object.desc.html_safe %>
 		<% end %>
 	</p>
 

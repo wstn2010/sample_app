@@ -5,7 +5,7 @@
 
 <p>
 <% if signed_in? %>
-	[rep]<%= object.rep_short_desc  unless object.nil? %>
+	<%= object.rep_short_desc.html_safe  unless object.nil? %>
 	<% if controllable?(object) %>
 		<div class="btn_box">
 			<%= link_to "Edit", edit_micropost_path(object.id), class: "btn btn-large btn-primary" %>
@@ -14,7 +14,7 @@
 	<% end %>
 
 <% else %>
-	<%= object.short_desc  unless object.nil? %>
+	<%= object.short_desc.html_safe  unless object.nil? %>
 <% end %>
 </p>
 

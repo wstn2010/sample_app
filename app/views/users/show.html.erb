@@ -2,8 +2,10 @@
 <div class="row">
 	<aside class="col-xs-3">
 		<section>
+			<%= gravatar_for @user, size: 200 %>
+		</section>
+		<section>
 			<h1>
-				<%= gravatar_for @user, size: 200 %>
 				<%= @user.name %>
 			</h1>
 			ID: <%= @user.rep_id %>
