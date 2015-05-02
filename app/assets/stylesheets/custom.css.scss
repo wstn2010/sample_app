@@ -80,28 +80,42 @@ textarea {
 	}
 }
 
+.simple_desc {
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1;
+	}
 
-h1, h2, h3, h4, h5, h6 {
-	line-height: 1;
+	h1 {
+		font-size: 2em;
+		letter-spacing: -2px;
+		margin-bottom: 30px;
+	}
+
+	h2 {
+		font-size: 1.2em;
+		letter-spacing: -1px;
+		margin-bottom: 30px;
+		font-weight: normal;
+	}
+
+	p {
+		font-size: 1.1em;
+		line-height: 1.7em;
+		color: $lightGray;
+	}
+
 }
 
-h1 {
-	font-size: 2em;
-	letter-spacing: -2px;
-	margin-bottom: 30px;
-}
+.flexCont{
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:flex;
 
-h2 {
-	font-size: 1.2em;
-	letter-spacing: -1px;
-	margin-bottom: 30px;
-	font-weight: normal;
-}
-
-p {
-	font-size: 1.1em;
-	line-height: 1.7em;
-	color: $lightGray;
+  .detail-pic {
+  	width: 240px;
+  }
 }
 
 #logo {

@@ -1,20 +1,22 @@
+<div class="simple_desc">
 
-<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材'}), primary_path(:goods => object) %>
+	<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材'}), primary_path(:goods => object) %>
 
-<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %></h2>
+	<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %></h2>
 
-<p>
-<% if signed_in? %>
-	<%= object.rep_short_desc.html_safe  unless object.nil? %>
-	<% if controllable?(object) %>
-		<div class="btn_box">
-			<%= link_to "Edit", edit_micropost_path(object.id), class: "btn btn-large btn-primary" %>
-			<%= link_to "Delete", micropost_path(object.id), :method => :delete, class: "btn btn-large btn-primary" %>
-		</div>
+	<p>
+	<% if signed_in? %>
+		<%= object.rep_short_desc.html_safe  unless object.nil? %>
+		<% if controllable?(object) %>
+			<div class="btn_box">
+				<%= link_to "Edit", edit_micropost_path(object.id), class: "btn btn-large btn-primary" %>
+				<%= link_to "Delete", micropost_path(object.id), :method => :delete, class: "btn btn-large btn-primary" %>
+			</div>
+		<% end %>
+
+	<% else %>
+		<%= object.short_desc.html_safe  unless object.nil? %>
 	<% end %>
+	</p>
 
-<% else %>
-	<%= object.short_desc.html_safe  unless object.nil? %>
-<% end %>
-</p>
-
+</div>

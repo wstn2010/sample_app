@@ -1,6 +1,6 @@
 <% if !object.nil? %>
-	<row>
-		<div class="col-xs-3">
+	<div class="flexCont">
+		<div class="detail-pic">
 			<div class="goods_pic">
 				<%= image_tag(object.pic_url, { :border => '0', :alt => '商材'}) %>
 			</div>
@@ -10,8 +10,8 @@
 			</span>
 		</div>
 
-		<div class="detail_desc col-xs-9">
-			<h2><%= object.title %></h2>
+		<div class="detail_desc">
+			<h2><%= object.title %> <small><%= object.category %></small></h2>
 
 			<p>
 				<% if signed_in? %>
@@ -21,7 +21,7 @@
 				<% end %>
 			</p>
 		</div>
-	</row>
+	</div>
 <% else %>
 	sorry, not prepared!
 <% end %>
