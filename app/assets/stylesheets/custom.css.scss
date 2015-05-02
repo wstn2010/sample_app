@@ -258,12 +258,15 @@ aside {
 }
 
 .goods_pic {
-	float: left;
+//	float: left;
 	margin-right: 20px;
-	
+	overflow: hidden;
 }
 
-
+/*.detail_desc {
+	display: block;
+}
+*/
 .panel_custom {
 	height: 500px;
 	overflow:scroll;

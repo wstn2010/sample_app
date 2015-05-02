@@ -1,23 +1,27 @@
 <% if !object.nil? %>
-	<div class="goods_pic">
-		<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材'}), primary_path(:name => object.title) %>
-	</div>
+	<row>
+		<div class="col-xs-3">
+			<div class="goods_pic">
+				<%= image_tag(object.pic_url, { :border => '0', :alt => '商材'}) %>
+			</div>
+			連絡先: 
+			<span class="user">
+				<%= link_to object.user.name, object.user %>
+			</span>
+		</div>
 
-	<h2><%= object.title %></h2>
+		<div class="detail_desc col-xs-9">
+			<h2><%= object.title %></h2>
 
-	<p>
-		<% if signed_in? %>
-			<%= object.rep_desc.html_safe %>
-		<% else %>
-			<%= object.desc.html_safe %>
-		<% end %>
-	</p>
-
-	連絡先: 
-	<span class="user">
-		<%= link_to object.user.name, object.user %>
-	</span>
-
+			<p>
+				<% if signed_in? %>
+					<%= object.rep_desc.html_safe %>
+				<% else %>
+					<%= object.desc.html_safe %>
+				<% end %>
+			</p>
+		</div>
+	</row>
 <% else %>
 	sorry, not prepared!
 <% end %>
