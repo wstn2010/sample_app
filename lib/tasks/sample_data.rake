@@ -5,6 +5,7 @@ namespace :db do
 		make_users
 	end
 
+	# adminだけ生成
 	task seed: :environment do
 		make_users2
 	end
