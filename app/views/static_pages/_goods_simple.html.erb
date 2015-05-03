@@ -10,7 +10,9 @@
 		<% if controllable?(object) %>
 			<div class="btn_box">
 				<%= link_to "Edit", edit_micropost_path(object.id), class: "btn btn-large btn-primary" %>
-				<%= link_to "Delete", micropost_path(object.id), :method => :delete, class: "btn btn-large btn-primary" %>
+				<% if deletable?(object) %>
+					<%= link_to "Delete", micropost_path(object.id), :method => :delete, class: "btn btn-large btn-primary" %>
+				<% end %>
 			</div>
 		<% end %>
 
