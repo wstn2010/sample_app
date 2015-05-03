@@ -3,7 +3,10 @@ namespace :db do
 	desc "Fill database with sample data"
 	task populate: :environment do
 		make_users
-		#make_microposts
+	end
+
+	task populate2: :environment do
+		make_users2
 	end
 end 
 
@@ -49,4 +52,17 @@ def make_users
 		end
 
 	end
+end
+
+def make_users2
+	categories = ["food", "health", "education"]
+
+	User.create!(name: "administrator", 
+		email: "wstn2010@gmail.com",
+		password: "zaq12345",
+		password_confirmation: "zaq12345",
+		rep_id: "R0000",
+		introduction: "I'm administrator.",
+		admin: true)
+
 end
