@@ -5,7 +5,7 @@ namespace :db do
 		make_users
 	end
 
-	task populate2: :environment do
+	task seed: :environment do
 		make_users2
 	end
 end 
@@ -57,7 +57,7 @@ end
 def make_users2
 	categories = ["food", "health", "education"]
 
-	User.create!(name: "administrator", 
+	rep = User.create!(name: "administrator", 
 		email: "wstn2010@gmail.com",
 		password: "zaq12345",
 		password_confirmation: "zaq12345",
@@ -65,4 +65,19 @@ def make_users2
 		introduction: "I'm administrator.",
 		admin: true)
 
+		maker = Faker::Name.name
+
+		title = Faker::Commerce.product_name
+		pic = Faker::Avatar.image(title, "250x200")
+		rep.microposts.create!(
+			title: title,
+			category: categories.sample,
+			short_desc: Faker::Lorem.paragraph,
+			desc: Faker::Lorem.paragraph(4),
+			rep_short_desc: Faker::Lorem.paragraph,
+			rep_desc: Faker::Lorem.paragraph(4),
+			goods_seq: 0,
+			maker: maker,
+			pic_url: pic
+		)
 end
