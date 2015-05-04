@@ -4,9 +4,15 @@
 
 	<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %></h2>
 
-	<p>
+	<div>
+	<%= object.rep_short_desc.html_safe  unless object.nil? %>
+	</div>
+	取り扱いセールスレップ: 
+	<span class="user">
+		<%= link_to object.user.name, object.user %>
+	</span>
+
 	<% if signed_in? %>
-		<%= object.rep_short_desc.html_safe  unless object.nil? %>
 		<% if controllable?(object) %>
 			<div class="btn_box">
 				<%= link_to "Edit", edit_micropost_path(object.id), class: "btn btn-large btn-primary" %>
@@ -15,10 +21,6 @@
 				<% end %>
 			</div>
 		<% end %>
-
-	<% else %>
-		<%= object.short_desc.html_safe  unless object.nil? %>
 	<% end %>
-	</p>
 
 </div>
