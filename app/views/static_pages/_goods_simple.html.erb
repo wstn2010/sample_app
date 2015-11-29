@@ -7,11 +7,11 @@
 	<div>
 	<%= object.rep_short_desc.html_safe  unless object.nil? %>
 	</div>
-	取り扱いセールスレップ: 
+<!-- 	取り扱いセールスレップ: 
 	<span class="user">
 		<%= link_to object.user.name, object.user %>
 	</span>
-
+ -->
 	<% if signed_in? %>
 		<% if controllable?(object) %>
 			<div class="btn_box">
