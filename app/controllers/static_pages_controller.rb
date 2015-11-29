@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
 
   def primary
     @goods = Micropost.find_by(id: params[:goods])
-    @sub_goods = Micropost.where('goods_seq > 0 and goods_seq <> ? and maker=?', @goods.goods_seq, @goods.maker)
+    @sub_goods = Micropost.where('goods_seq > 0 and goods_seq <> ? and category=?', @goods.goods_seq, @goods.category)
   end
 
   def help
