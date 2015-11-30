@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @primary_goods = Micropost.where('goods_seq=0')
-
+    @primary_goods = Micropost.where('goods_seq>=0')
   end
 
   def primary
@@ -13,7 +12,7 @@ class StaticPagesController < ApplicationController
   def help
   	@word = "my help"
   end
-
+ 
   def about
   end
 
