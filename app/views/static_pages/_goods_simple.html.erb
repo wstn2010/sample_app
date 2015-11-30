@@ -5,7 +5,7 @@
 	<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %></h2>
 
 	<div>
-	<%= object.rep_short_desc.html_safe  unless object.nil? %>
+	<%= object.short_desc.html_safe  unless object.nil? %>
 	</div>
 <!-- 	取り扱いセールスレップ: 
 	<span class="user">
