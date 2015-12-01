@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @primary_goods = Micropost.where('goods_seq>=0').order('goods_seq desc')
+    @primary_goods = Micropost.where('goods_seq>=0').order('goods_seq asc')
   end
 
   def primary
