@@ -2,7 +2,7 @@
 
 	<%= link_to image_tag(object.pic_url, { :border => '0', :alt => '商材', :width => 156, :height => 154}), primary_path(:goods => object) %>
 
-	<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %></h2>
+	<h2><%= link_to object.title, primary_path(:goods => object) unless object.nil? %><small> <%= object.category %></small></h2>
 
 	<div>
 	<%= object.short_desc.html_safe  unless object.nil? %>
