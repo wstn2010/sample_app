@@ -87,7 +87,7 @@ textarea {
 	}
 }
 
-.simple_desc {
+.simple_desc, .detail_desc {
 	h1, h2, h3, h4, h5, h6 {
 		line-height: 1;
 	}
@@ -112,6 +112,7 @@ textarea {
 	}
 
 }
+
 
 .flexCont{
   display:-webkit-box;
