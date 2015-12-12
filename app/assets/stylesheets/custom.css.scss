@@ -107,9 +107,9 @@ textarea {
 	}
 
 	p {
-		font-size: 1.2em;
+		font-size: 1em;
 		line-height: 1.4em;
-		color: $lightGray;
+		padding:8px;
 	}
 
 }
@@ -255,7 +255,7 @@ aside {
 .price {
 	font-family: 'Tahoma', 'Arial';
 	padding:8px;
-	font-size: 1.6em;
+	font-size: 1.4em;
 }
 
 .stats {
