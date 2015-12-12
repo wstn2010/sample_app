@@ -19,5 +19,5 @@
 $(document).ready(function(){
 	setTimeout(function(){
 		window.scrollTo(0,0);
-	}, 1500);
+	}, 500);
 });
