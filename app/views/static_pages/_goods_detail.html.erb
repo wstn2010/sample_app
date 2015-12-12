@@ -1,12 +1,13 @@
 <% if !object.nil? %>
-	<div class="flexCont">
-		<div class="detail-pic">
+	<div class="container">
+
+		<div class="detail-pic col-xs-12 col-md-4">
 			<div class="goods_pic">
 				<%= image_tag(object.pic_url, { :border => '0', :alt => '商材', :width => 156, :height => 154}) %>
 			</div>
 		</div>
 
-		<div class="detail_desc">
+		<div class="detail_desc col-xs-12 col-md-8">
 			<h2><%= object.title %> <small><%= object.category %></small></h2>
 
 			<p>
